@@ -1,0 +1,38 @@
+### Recuperar todas las peliculas
+GET http://localhost:1234/movies
+
+### Recuperar las peliculas por id
+// eL código está bien, si tengo error
+// es xq el ID (1), en el JSON
+// no son números, son letras
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Recuperar las peliculas por GÉNERO
+
+GET http://localhost:1234/movies?genre=action
+
+### Creando película con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+    "title": "The Godfather",
+    "year": 1975,
+    "director": "Francis Ford Coppola",
+    "duration": 175,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+    "Crime",
+    "Drama"
+]}
+
+### Actualizar una pelicula
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "title": "Devuelvan la guita chavales",
+    "year": 2004
+}
+
